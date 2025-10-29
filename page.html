@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apollo's Devlog</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Apollo's Devlog</h1>
+  <p>Sharing development updates, experiments, and projects!</p>
+</header>
+
+<marquee behavior="scroll" direction="left">✨ New updates, screenshots, and projects are live! ✨</marquee>
+<marquee behavior="scroll" direction="right" scrollamount="6">⚡ Retro dev vibes only! ⚡</marquee>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#projects">Projects</a>
+  <a href="#devlogs">Devlogs</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="devlog-entry">
+      <img src="devlog/devlog1.png" alt="Unity project screenshot" onclick="openModal(this)">
+      <div class="devlog-text">
+        <h3>Flying units in Unity</h3>
+        <p class="date">2025-10-28</p>
+        <p class="short-text">Working on 3D stuff like Unity unit AI and formations...</p>
+        <div class="hidden-content">
+          This project focuses on making units move more naturally using semicircle formations, smooth rotations, and hover height adjustments in Unity.
+        </div>
+        <button class="button" onclick="toggleContent(this)">Read More</button>
+        <button class="button" onclick="alert('Opening project: Unit AI in Unity')">View Project</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="devlogs">
+    <h2>Recent Devlogs</h2>
+
+
+
+    <div class="devlog-entry">
+      <img src="images/devlog3.png" alt="Terrain" onclick="openModal(this)">
+      <div class="devlog-text">
+        <h3>Terrain Generation</h3>
+        <p class="date">2025-10-28</p>
+        <p class="short-text">Added new types of terrain.</p>
+        <div class="hidden-content">
+          Experimenting with terrain generation to make new planets or continents for this sideproject.
+        </div>
+        <button class="button" onclick="toggleContent(this)">Read More</button>
+        <button class="button" onclick="alert('Opening project: Devlog details')">View Project</button>
+        </div>
+    </div>
+
+    <div class="devlog-entry">
+      <img src="images/devlog2.png" alt="Gunner" onclick="openModal(this)">
+      <div class="devlog-text">
+        <h3>Turrets</h3>
+        <p class="date">2025-10-28</p>
+        <p class="short-text">Added turrets.</p>
+        <div class="hidden-content">
+          Currently working on turret designs and prototypes to add to the game.
+        </div>
+        <button class="button" onclick="toggleContent(this)">Read More</button>
+        <button class="button" onclick="alert('Opening project: Devlog details')">View Project</button>
+      </div>
+    </div>
+
+
+    <div class="devlog-entry">
+      <img src="images/devlog1.png" alt="Gunship" onclick="openModal(this)">
+      <div class="devlog-text">
+        <h3>Flying units</h3>
+        <p class="date">2025-10-28</p>
+        <p class="short-text">Working on flying unit movement and formations in Unity</p>
+        <div class="hidden-content">
+          Working on bezier curves for new types of flying unit movement, formations and hovering for other types of units.
+        </div>
+        <button class="button" onclick="toggleContent(this)">Read More</button>
+        <button class="button" onclick="alert('Opening project: Devlog details')">View Project</button>
+      </div>
+    </div>
+
+
+
+
+
+
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Reach out via email: <a href="mailto:apollo@example.com" class="email-link">apollo@example.com</a></p>
+    <button class="button" onclick="alert('Email link clicked!')">Email Me</button>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Apollo. All rights reserved.
+</footer>
+
+<!-- Image Modal -->
+<div id="modal">
+  <img id="modal-img" src="">
+</div>
+
+<script>
+function toggleContent(button) {
+  const content = button.previousElementSibling;
+  if (content.style.display === "block") {
+    content.style.display = "none";
+    button.textContent = "Read More";
+  } else {
+    content.style.display = "block";
+    button.textContent = "Read Less";
+  }
+}
+
+function openModal(img) {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  modalImg.src = img.src;
+  modal.style.display = "flex";
+  modal.onclick = () => { modal.style.display = "none"; };
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.getElementById('modal').style.display = 'none';
+});
+</script>
+
+</body>
+</html>
